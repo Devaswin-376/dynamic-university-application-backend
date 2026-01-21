@@ -88,8 +88,8 @@ field_5=<file>
 
 ## 👤 Author
 
-**Devaswin K.S**
-Diploma in Computer Engineering
+**Devaswin K.S**  
+Diploma in Computer Engineering  
 Backend-focused Python Developer
 
 ---
