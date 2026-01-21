@@ -1,0 +1,106 @@
+# Dynamic University Application Backend
+
+This is backend application built in Django and Django REST Framework.This system allows to define dynamic application form for different universities.The universities can have their own custom application fields (like text,file,date etc.) and applicant can submit applications accordingly.
+
+---
+
+## Tech stack 
+* Python
+* Django
+* Django REST Framework(DRF)
+* SQLite
+
+## Features
+* Admin can manage Universities and application forms
+* Add dynamic application fields per universities
+* Field type validation 
+* File upload handling
+* API for fetching university details,application forms and to submit applications
+
+## API Endpoints
+
+### List Universities
+
+```
+GET /api/universities/
+```
+
+Returns a list of all universities.
+
+---
+
+### View Single University Details
+
+```
+GET /api/universities/<university_id>/
+```
+
+Returns details like name, location, and description of a university.
+
+---
+
+### Get Fields of a University
+
+```
+GET /api/universities/<university_id>/fields/
+```
+
+Returns dynamic application fields configured for the selected university.
+
+---
+
+### Submit Application
+
+```
+POST /api/applications/submit/
+```
+
+**Request type:** `multipart/form-data`
+
+**Example fields:**
+
+```
+university_id=1
+field_2=John Doe
+field_3=2001-05-10
+field_4=Engineering
+field_5=<file>
+```
+
+---
+
+## How to Test
+
+* Use **Django Admin** to:
+
+  * Create universities
+  * Add application fields
+* Use **Postman or DRF Browsable API** to:
+
+  * Fetch universities
+  * Fetch dynamic fields
+  * Submit applications
+
+---
+
+## Design Decisions
+
+* Dynamic fields are stored separately to allow flexibility
+* University metadata is separated from application data
+* File uploads are handled using multipart requests
+* Admin panel is used instead of APIs for managing universities
+
+
+## 👤 Author
+
+**Devaswin K.S**
+Diploma in Computer Engineering
+Backend-focused Python Developer
+
+---
+
+## 📄 License
+
+This project is created for evaluation and learning purposes.
+
+
