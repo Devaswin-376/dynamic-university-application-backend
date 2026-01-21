@@ -10,6 +10,8 @@ This is backend application built in Django and Django REST Framework.This syste
 * Django REST Framework(DRF)
 * SQLite
 
+---
+
 ## Features
 * Admin can manage Universities and application forms
 * Add dynamic application fields per universities
@@ -17,39 +19,32 @@ This is backend application built in Django and Django REST Framework.This syste
 * File upload handling
 * API for fetching university details,application forms and to submit applications
 
+---
+
 ## API Endpoints
 
-### List Universities
+### 1 List Universities
 
 ```
 GET /api/universities/
 ```
-
 Returns a list of all universities.
 
----
-
-### View Single University Details
+### 2 View Single University Details
 
 ```
 GET /api/universities/<university_id>/
 ```
-
 Returns details like name, location, and description of a university.
 
----
-
-### Get Fields of a University
+### 3 Get Fields of a University
 
 ```
 GET /api/universities/<university_id>/fields/
 ```
-
 Returns dynamic application fields configured for the selected university.
 
----
-
-### Submit Application
+### 4 Submit Application
 
 ```
 POST /api/applications/submit/
