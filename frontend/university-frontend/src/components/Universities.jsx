@@ -14,20 +14,20 @@ function Universities() {
 
   return (
     <div className="page-wrapper">
-    <div className="container">
-      <h2>Select University</h2>
-      <div className="university-list">
-        <ul>
-          {universities.map((uni) => (
-            <li key={uni.id}>
-              <button className="apply-button" onClick={() => navigate(`/apply/${uni.id}`)} >
+      <div className="container">
+        <h2>Select University</h2>
+        <div className="university-list">
+          <ul>
+            {universities.map((uni) => (
+              <li key={uni.id}>
+                <button className="apply-button" onClick={() => navigate(`/apply/${uni.id}`)} >
                   {uni.name}{" "}
-              </button>
-            </li>
-          ))}
-        </ul>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

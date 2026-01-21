@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+
+# University Detail model
 class University(models.Model):
     name = models.CharField(max_length=255,null=False)
     location = models.CharField(max_length=255)
@@ -9,6 +11,7 @@ class University(models.Model):
     def __str__(self):
         return self.name
     
+#Application Field 
 class ApplicationField(models.Model):
     FIELDS_TYPES = [
         ('text', 'Text'),
@@ -30,11 +33,12 @@ class ApplicationField(models.Model):
     def __str__(self):
         return f"{self.name} ({self.university.name})"
     
+#Application submission model
 class ApplicationSubmission(models.Model):
     university = models.ForeignKey(University, on_delete=models.CASCADE)
     submitted_at = models.DateTimeField(auto_now_add=True)
     
-    
+# Application Data Model
 class ApplicationData(models.Model):
     submission = models.ForeignKey(ApplicationSubmission, on_delete=models.CASCADE)
     field = models.ForeignKey(ApplicationField, on_delete=models.CASCADE)

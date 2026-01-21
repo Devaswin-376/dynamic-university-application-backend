@@ -15,18 +15,21 @@ from .utils import (
 )
 # Create your views here.
 
+# View for University List
 class UniversityListAPIView(APIView):
     def get(self, request):
         universities = University.objects.all()
         serializer = UniversitySerializer(universities, many=True)
         return Response(serializer.data)
     
+# View for Fetching Single University Detail
 class UniversityDetailAPIView(APIView):
     def get(self, request, university_id):
         university = get_object_or_404(University, id=university_id)
         serializer = UniversitySerializer(university)
         return Response(serializer.data)
     
+# View for Fetching Application Fields of Specific University
 class ApplicationFieldsAPIView(APIView):
     def get(self, request, university_id):
         university = get_object_or_404(University, id=university_id)
@@ -34,6 +37,7 @@ class ApplicationFieldsAPIView(APIView):
         serializer = ApplicationFieldSerializer(fields, many=True)
         return Response(serializer.data)
     
+# Application Submit View
 class SubmitApplicationAPIView(APIView):
     def post(self, request):
         university_id = request.data.get('university_id')
@@ -41,17 +45,21 @@ class SubmitApplicationAPIView(APIView):
         submission = ApplicationSubmission.objects.create(university=university)
         fields = ApplicationField.objects.filter(university=university)
 
+        # Application Field Validation 
         try :     
             for field in fields:
                 field_id = f"field_{field.id}"
 
+                # Mandatory Field Validation
                 validate_required_field(field, field_id, request.data, request.FILES)
                 
+                # File Type and File Size Validation
                 if field.field_type == 'file' and field_id in request.FILES:
                     uploaded_file = request.FILES[field_id]
                     validate_file_field(field, uploaded_file)
                     save_data(submission, field, file=uploaded_file)
-            
+
+                # Dropdown and number Field validation 
                 elif field_id in request.data:
                     value = request.data.get(field_id)
                     validate_dropdown_field(field, value)

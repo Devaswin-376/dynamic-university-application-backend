@@ -72,68 +72,68 @@ function DynamicForm() {
           </div>
         )}
         <h2>Application Form</h2>
-      <form onSubmit={handleSubmit}>
-        {fields.map((field) => (
-          <div className="form-group" key={field.id}>
-            <label>{field.name}</label>
+        <form onSubmit={handleSubmit}>
+          {fields.map((field) => (
+            <div className="form-group" key={field.id}>
+              <label>{field.name}</label>
 
-            {field.field_type === "text" && (
-              <input
-                type="text"
-                required={field.is_required}
-                onChange={(e) => handleChange(field.id, e.target.value)}
-              />
-            )}
+              {field.field_type === "text" && (
+                <input
+                  type="text"
+                  required={field.is_required}
+                  onChange={(e) => handleChange(field.id, e.target.value)}
+                />
+              )}
 
-            {field.field_type === "number" && (
-              <input
-                type="number"
-                required={field.is_required}
-                onChange={(e) => handleChange(field.id, e.target.value)}
-              />
-            )}
+              {field.field_type === "number" && (
+                <input
+                  type="number"
+                  required={field.is_required}
+                  onChange={(e) => handleChange(field.id, e.target.value)}
+                />
+              )}
 
-            {field.field_type === "date" && (
-            <input
-              type="date"
-              required={field.is_required}
-              onChange={(e) => handleChange(field.id, e.target.value)}
-            />
-          )}
+              {field.field_type === "date" && (
+                <input
+                  type="date"
+                  required={field.is_required}
+                  onChange={(e) => handleChange(field.id, e.target.value)}
+                />
+              )}
 
-          {field.field_type === "dropdown" && (
-            <select
-              className="select"
-                required={field.is_required}
-                onChange={(e) => handleChange(field.id, e.target.value)}
-              >
-                <option value="">Select</option>
-                {field.options?.map((opt, i) => (
-                  <option key={i} value={opt}>
+              {field.field_type === "dropdown" && (
+                <select
+                  className="select"
+                  required={field.is_required}
+                  onChange={(e) => handleChange(field.id, e.target.value)}
+                >
+                  <option value="">Select</option>
+                  {field.options?.map((opt, i) => (
+                    <option key={i} value={opt}>
                     {opt}
-                  </option>
-                ))}
-              </select>
-            )}
+                    </option>
+                  ))}
+                </select>
+              )}
 
-          {field.field_type === "file" && (
-            <input
-              type="file"
-              required={field.is_required}
-              onChange={(e) =>
-                handleFileChange(field.id, e.target.files[0])
-              }
-            />
-          )}
-        </div>
-      ))}
+              {field.field_type === "file" && (
+                <input
+                  type="file"
+                  required={field.is_required}
+                  onChange={(e) =>
+                    handleFileChange(field.id, e.target.files[0])
+                  }
+                />
+              )}
+            </div>
+          ))}
 
-      <button className="submit-btn" type="submit" onClick={handleSubmit}>
-        Submit Application
-      </button>
-    </form>
-  </div>
-</div>
+          <button className="submit-btn" type="submit" onClick={handleSubmit}>
+            Submit Application
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }
 
