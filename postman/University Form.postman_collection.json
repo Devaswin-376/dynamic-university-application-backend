@@ -1,0 +1,129 @@
+{
+  "info": {
+    "_postman_id": "615f9998-f6d6-46ef-9424-79ccf855e481",
+    "name": "University Form",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48253689",
+    "_collection_link": "https://go.postman.co/collection/48253689-615f9998-f6d6-46ef-9424-79ccf855e481?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "universities/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/universities/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "universities",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "application_fields/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/universities/1/fields/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "universities",
+            "1",
+            "fields",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "application/submit/",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "university_id",
+              "value": "1",
+              "type": "text",
+              "uuid": "30929175-a9ba-4793-b33e-faaece9f7a81"
+            },
+            {
+              "key": "field_4",
+              "value": "John",
+              "type": "text",
+              "uuid": "10e38da3-f996-42ef-b6ef-ed22ce00aca1"
+            },
+            {
+              "key": "field_5",
+              "type": "file",
+              "uuid": "161559cf-5a62-418f-85fb-4cd2a1a3936a",
+              "src": "/C:/Users/devikeerthana/Pictures/superset_Profile.jpg"
+            },
+            {
+              "key": "field_6",
+              "value": "BE",
+              "type": "text",
+              "uuid": "e378499d-d933-499f-bd7c-c24176bfc2aa"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/application/submit/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "application",
+            "submit",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "universities/details/",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
