@@ -90,7 +90,7 @@ field_5=<file>
 
 **Devaswin K.S**  
 Diploma in Computer Engineering  
-Backend-focused Python Developer
+Python Backend Developer
 
 ---
 
