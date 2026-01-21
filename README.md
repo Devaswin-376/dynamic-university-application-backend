@@ -78,6 +78,15 @@ field_5=<file>
 
 ---
 
+## Postman Collection For Testing
+
+A Postman collection is included in the repository.  
+s
+**File:**
+`postman/University Form.postman_collection.json`  
+
+You can import this file into Postman to test API's locally
+
 ## Design Decisions
 
 * Dynamic fields are stored separately to allow flexibility
