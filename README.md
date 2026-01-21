@@ -81,11 +81,13 @@ field_5=<file>
 ## Postman Collection For Testing
 
 A Postman collection is included in the repository.  
-s
+
 **File:**
 `postman/University Form.postman_collection.json`  
 
 You can import this file into Postman to test API's locally
+
+---
 
 ## Design Decisions
 
@@ -94,7 +96,7 @@ You can import this file into Postman to test API's locally
 * File uploads are handled using multipart requests
 * Admin panel is used instead of APIs for managing universities
 
-
+---
 ## 👤 Author
 
 **Devaswin K.S**  
