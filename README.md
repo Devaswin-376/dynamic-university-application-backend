@@ -47,7 +47,7 @@ Returns dynamic application fields configured for the selected university.
 ### 4. Submit Application
 
 ```
-POST /api/applications/submit/
+POST /api/application/submit/
 ```
 
 **Request type:** `multipart/form-data`
@@ -86,6 +86,11 @@ A Postman collection is included in the repository.
 `postman/University Form.postman_collection.json`  
 
 You can import this file into Postman to test API's locally
+
+---
+
+## Working Demo
+Screenshots of demonstrating the working of API in Postman and Frontend is added in `screenshots/` in the repository. 
 
 ---
 
